@@ -1,3 +1,6 @@
 *~
 *.o
 es40
+es40_idb
+es40_lsm
+es40_lss
