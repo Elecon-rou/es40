@@ -192,7 +192,7 @@ endif
 
 CFLAGS =  -I. -I..  \
 	$(CDEBUGFLAGS) $(CTUNINGFLAGS) $(OPTIONS) $(COPTIONFLAGS)
-LDFLAGS = $(LDOPTIONFLAGS)
+LDFLAGS = -lpthread $(LDOPTIONFLAGS)
 
 IDB_CFLAGS = -DIDB 
 LSM_CFLAGS = -DIDB -DLS_MASTER
@@ -268,7 +268,7 @@ all: es40
 debug: es40_idb es40_lsm es40_lss
 
 es40:   $(OBJS)
-	$(LD) $(LDFLAGS) -o es40 $(OBJS)L
+	$(LD) -o es40 $(OBJS) $(LDFLAGS)
 
 es40_idb: $(IDB_OBJS)
 	$(LD) $(LDFLAGS) -o es40_idb $(IDB_OBJS)
